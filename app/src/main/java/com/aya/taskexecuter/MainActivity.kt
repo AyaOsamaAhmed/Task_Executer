@@ -4,7 +4,9 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout
 import com.aya.taskexecuter.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 import java.util.*
@@ -29,6 +31,9 @@ class MainActivity : AppCompatActivity() {
 
     fun clickable (){
 
+        binding.drawerClick.setOnClickListener {
+            chooseDrawer()
+        }
         binding.task1.setOnClickListener {
             clearBackground()
             binding.task1.setBackgroundResource(R.drawable.backgroud_black)
@@ -72,6 +77,18 @@ class MainActivity : AppCompatActivity() {
         binding.task3.setTextColor(Color.BLACK)
         binding.task4.setBackgroundColor(Color.WHITE)
         binding.task4.setTextColor(Color.BLACK)
+    }
+
+    fun getDrawerLayout(): DrawerLayout {
+        return binding.drawerLayout
+    }
+
+    fun chooseDrawer(){
+        if (getDrawerLayout().isDrawerOpen(GravityCompat.START)) {
+            getDrawerLayout().closeDrawer(GravityCompat.START)
+        }else{
+            getDrawerLayout().openDrawer(GravityCompat.START)
+        }
     }
 
 }
