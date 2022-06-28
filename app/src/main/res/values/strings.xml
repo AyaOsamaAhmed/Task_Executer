@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Task Executer</string>
+    <string name="app_name">Task Executer App</string>
+     <string name="task">Task >>>>></string>
+    <string name="time">28-6-2022 08:21</string>
+    <string name="task1">Task 1</string>
+    <string name="task2">Task 2</string>
+    <string name="task3">Task 3</string>
+    <string name="task4">Task 4</string>
 </resources>
